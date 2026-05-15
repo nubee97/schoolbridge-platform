@@ -7,9 +7,7 @@
 SchoolBridge is a multi-tenant education platform designed to become the digital bridge between schools and families.
 
 Built with:
-- 🇰🇷 Korean-style parent engagement
-- 🇺🇸 US SaaS scalability
-- 🇳🇬 Nigeria-first practicality
+Korean-style parent engagement, 🇺🇸 US SaaS scalability, 🇳🇬 Nigeria-first practicality
 
 </div>
 
