@@ -1,43 +1,94 @@
 # SchoolBridge Platform
 
-**SchoolBridge** is a multi-tenant parent engagement and school operations platform built to help schools communicate with parents in real time through private child feeds, attendance records, reports, homework updates, announcements, and teacher-parent interaction tools.
+<div align="center">
 
-It is designed to become the daily digital bridge between **schools, teachers, parents, and students**.
+## A Real-Time Parent Engagement & School Operations Platform
+
+SchoolBridge is a multi-tenant education platform designed to become the digital bridge between schools and families.
+
+Built with:
+- 🇰🇷 Korean-style parent engagement
+- 🇺🇸 US SaaS scalability
+- 🇳🇬 Nigeria-first practicality
+
+</div>
 
 ---
 
-## Vision
+# Table of Contents
+
+- [Vision](#vision)
+- [Project Status](#project-status)
+- [Core Platform Model](#core-platform-model)
+- [What Works Now](#what-works-now)
+- [Main Features](#main-features)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Environment Variables](#environment-variables)
+- [Local Development Setup](#local-development-setup)
+- [Supabase Setup](#supabase-setup)
+- [Netlify Deployment](#netlify-deployment)
+- [Security Notice](#security-notice)
+- [Production Features Still Needed](#production-features-still-needed)
+- [Development Roadmap](#development-roadmap)
+- [Product Philosophy](#product-philosophy)
+- [Business Positioning](#business-positioning)
+- [Git Workflow](#git-workflow)
+- [License](#license)
+- [Founder Note](#founder-note)
+
+---
+
+# Vision
 
 SchoolBridge is not just another school management system.
 
-The platform is built around a simple belief:
+The platform is built around one core belief:
 
-> Schools do not only need administrative software. They need trust infrastructure.
+> Schools do not only need administrative software.  
+> They need trust infrastructure.
 
-Parents want reassurance, visibility, and emotional connection to their child’s school life. Schools want stronger communication, better retention, and a more professional digital experience.
+Parents want:
+- reassurance
+- visibility
+- emotional connection
+- real-time school updates
+
+Schools want:
+- professionalism
+- parent trust
+- retention
+- organized communication
 
 SchoolBridge connects both sides.
 
 ---
 
-## Strategic Positioning
+# Strategic Positioning
 
 SchoolBridge combines:
 
-- **Korean-style parent engagement**  
-  Daily child updates, private feeds, albums, emotional parent trust.
+### 🇰🇷 Korean-Style Parent Engagement
+- Daily child updates
+- Emotional parent trust
+- Private activity feeds
+- Albums and reports
 
-- **US SaaS scalability**  
-  Clean user experience, subscription readiness, multi-tenant architecture.
+### 🇺🇸 US SaaS Scalability
+- Multi-tenant architecture
+- Clean UX
+- Subscription-ready infrastructure
+- Modern workflows
 
-- **Nigeria-first practicality**  
-  Mobile-first design, affordability, WhatsApp/SMS-ready communication.
-
-The platform starts with parent engagement and expands into broader school operations.
+### 🇳🇬 Nigeria-First Practicality
+- Mobile-first design
+- Affordable deployment
+- WhatsApp/SMS-ready communication
+- Low-tech usability
 
 ---
 
-## Current Project Status
+# Project Status
 
 This repository contains the working MVP foundation for SchoolBridge.
 
@@ -45,26 +96,26 @@ The current version is connected to Supabase and supports real database-backed w
 
 | Area | Status |
 |---|---|
-| Frontend MVP | Active |
-| Supabase schema | Active |
-| Seed data | Available |
-| Admin workflows | Partially functional |
-| Teacher workflows | Partially functional |
-| Parent workflows | Partially functional |
-| Authentication | Pending production implementation |
-| Secure RLS policies | Pending production hardening |
-| Media uploads | Pending full Supabase Storage integration |
+| Frontend MVP | ✅ Active |
+| Supabase Schema | ✅ Active |
+| Seed Data | ✅ Available |
+| Admin Workflows | ⚠️ Partial |
+| Teacher Workflows | ⚠️ Partial |
+| Parent Workflows | ⚠️ Partial |
+| Authentication | ❌ Pending |
+| Secure RLS Policies | ❌ Pending |
+| Media Uploads | ❌ Pending |
 
 ---
 
-## Core Platform Model
+# Core Platform Model
 
 SchoolBridge follows a **B2B2C multi-tenant SaaS model**.
 
-- **Schools** are the paying institutional customers.
-- **Teachers** create daily content and manage classroom activity.
-- **Parents** engage with their child’s school life.
-- **Students** are the center of the data and experience layer.
+- Schools are the paying institutional customers
+- Teachers create daily content and manage operations
+- Parents engage with their child’s school life
+- Students are the center of the platform experience
 
 ```text
 SchoolBridge Core Platform
@@ -89,161 +140,200 @@ SchoolBridge Core Platform
               ├── Classes
               ├── Students
               └── Parents
+```
 
-Each school operates as a separate tenant inside the same platform.
+Each school operates as an isolated tenant inside the same infrastructure platform.
 
-What Works Now
-School / Admin
+---
+
+# What Works Now
+
+## School / Admin Workflows
 
 Admins can:
 
-Create schools
-Add admin, teacher, and parent profiles
-Create classes
-Add students
-Link parents or guardians to students
-View school-level record counts
-Manage the basic school data structure
-Teacher
+- Create schools
+- Add admin, teacher, and parent profiles
+- Create classes
+- Add students
+- Link parents/guardians to students
+- View school-level record counts
+- Manage school structure
+
+---
+
+## Teacher Workflows
 
 Teachers can:
 
-Publish child-specific posts
-Publish class-wide posts
-Publish school-wide posts
-Create updates, photo posts, reports, homework, announcements, behavior notes, and health notes
-Attach image or PDF URLs to posts
-Mark daily attendance
-Use an AI-style draft helper for parent-friendly wording
-Parent
+- Publish child-specific posts
+- Publish class-wide posts
+- Publish school-wide posts
+- Create updates, reports, homework, announcements, behavior notes, and health notes
+- Attach image/PDF URLs to posts
+- Mark attendance
+- Use AI-style draft helper prompts
+
+---
+
+## Parent Workflows
 
 Parents can:
 
-Select a parent profile
-View posts related to linked children
-View class and school-wide updates
-React to posts with heart, clap, or smile reactions
-Comment on posts
-View attendance records for linked children
-Student Profile
+- Select a parent profile
+- View linked child posts
+- View class and school-wide updates
+- React with heart, clap, or smile
+- Comment on posts
+- View attendance history
+
+---
+
+## Student Profile Workflows
 
 Student profiles display:
 
-Student information
-Class assignment
-Linked guardians
-Recent posts
-Attendance history
-Main Features
-Private Parent Feed
+- Student information
+- Class assignment
+- Linked guardians
+- Recent posts
+- Attendance history
+
+---
+
+# Main Features
+
+## Private Parent Feed
 
 The parent feed is the emotional center of the product.
 
 Schools and teachers can share:
 
-Daily child updates
-Classroom photos
-Homework
-Announcements
-Reports
-Behavior notes
-Health notes
-Attendance-related updates
+- Daily child updates
+- Classroom photos
+- Homework
+- Announcements
+- Reports
+- Behavior notes
+- Health notes
+- Attendance updates
 
-The goal is to help parents feel connected to their child’s school life in real time.
+Goal:
 
-Teacher Upload Studio
+> Help parents feel connected to their child’s school life in real time.
 
-The teacher workflow is designed around speed and simplicity.
+---
 
-Long-term product goal:
+## Teacher Upload Studio
 
-A teacher should be able to post a useful update in under 15 seconds.
+The teacher workflow is designed around speed.
+
+### Long-term product goal:
+
+> A teacher should be able to post a useful update in under 15 seconds.
 
 Supported post types:
 
-Update
-Photo
-Report
-Homework
-Announcement
-Behavior note
-Health note
-Attendance note
-Attendance Management
+- Update
+- Photo
+- Report
+- Homework
+- Announcement
+- Behavior note
+- Health note
+- Attendance note
 
-Teachers can mark daily attendance for students.
+---
 
-Supported statuses:
+## Attendance Management
 
-Present
-Absent
-Late
-Excused
-Reactions and Comments
+Teachers can mark:
 
-Parents can engage with posts through:
+- Present
+- Absent
+- Late
+- Excused
 
-Heart
-Clap
-Smile
-Comments
+---
 
-This turns SchoolBridge from a cold school portal into a warm parent engagement experience.
+## Reactions & Comments
 
-Multi-Tenant School Structure
+Parents can engage through:
 
-The database is structured so multiple schools can use the same platform while keeping data separated by school_id.
+- ❤️ Heart
+- 👏 Clap
+- 😊 Smile
+- Comments
 
-Technology Stack
-Frontend
-React
-Vite
-JavaScript
-Tailwind CSS
-React Router
-Backend
-Supabase
-PostgreSQL
-Supabase Row Level Security
-Supabase SQL Editor
-Hosting
-Netlify for frontend deployment
-Supabase for backend and database services
-Future Infrastructure Direction
+This turns SchoolBridge from a cold portal into a warm engagement platform.
 
-The MVP uses Supabase and Netlify for speed.
+---
 
-At scale, selected infrastructure may move to:
+## Multi-Tenant Architecture
 
-AWS S3
-AWS CloudFront
-AWS RDS PostgreSQL
-AWS Lambda or ECS
-AWS SES/SNS
-Dedicated analytics and notification services
-Project Structure
+The database is structured so multiple schools can use the same platform while keeping data isolated by:
+
+```text
+school_id
+```
+
+---
+
+# Technology Stack
+
+## Frontend
+
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- React Router
+
+---
+
+## Backend
+
+- Supabase
+- PostgreSQL
+- Supabase Row Level Security
+- Supabase SQL Editor
+
+---
+
+## Hosting
+
+- Netlify
+- Supabase
+
+---
+
+## Future Infrastructure Direction
+
+At scale, infrastructure may migrate to:
+
+- AWS S3
+- AWS CloudFront
+- AWS RDS PostgreSQL
+- AWS Lambda
+- AWS ECS
+- AWS SES/SNS
+
+---
+
+# Project Structure
+
+```text
 schoolbridge-platform/
 │
 ├── docs/
-│   └── Project documentation and planning files
 │
 ├── public/
-│   └── Static public assets
 │
 ├── src/
 │   ├── components/
-│   │   └── Reusable UI components
-│   │
 │   ├── data/
-│   │   └── Data helpers and constants
-│   │
 │   ├── lib/
-│   │   └── Supabase client and backend helper functions
-│   │
 │   ├── pages/
-│   │   └── Main application pages
-│   │
 │   ├── App.jsx
 │   └── main.jsx
 │
@@ -259,258 +349,400 @@ schoolbridge-platform/
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
-Environment Variables
+```
 
-Create a .env file in the project root.
+---
 
-VITE_SUPABASE_URL=https://your-project-id.supabase.co
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_or_publishable_key
+# Environment Variables
 
-Example URL format:
+Create a `.env` file:
 
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+Example:
+
+```env
 VITE_SUPABASE_URL=https://rqanxemgnqgjbrdshtdw.supabase.co
+```
 
-Do not commit .env to GitHub.
+Never commit `.env` to GitHub.
 
-Local Development Setup
-1. Clone the repository
+---
+
+# Local Development Setup
+
+## 1. Clone Repository
+
+```bash
 git clone https://github.com/nubee97/schoolbridge-platform.git
 cd schoolbridge-platform
-2. Install dependencies
+```
+
+---
+
+## 2. Install Packages
+
+```bash
 npm install
-3. Add environment variables
+```
 
-Create .env in the project root.
+---
 
-VITE_SUPABASE_URL=https://your-project-id.supabase.co
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_or_publishable_key
-4. Create Supabase tables
+## 3. Add Environment Variables
+
+Create:
+
+```text
+.env
+```
+
+Add:
+
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+---
+
+## 4. Run Supabase Schema
 
 Open:
 
+```text
 supabase/schema.sql
-
-Copy the full SQL file.
+```
 
 Go to:
 
-Supabase Dashboard → SQL Editor → New Query
+```text
+Supabase Dashboard → SQL Editor
+```
 
 Paste and run the schema.
 
-5. Add starter data
+---
+
+## 5. Run Seed Data
 
 Open:
 
+```text
 supabase/seed.sql
+```
 
-Copy the full SQL file.
+Paste into SQL Editor and run.
 
-Paste and run it in Supabase SQL Editor.
+---
 
-6. Start the development server
+## 6. Start Development Server
+
+```bash
 npm run dev
+```
 
 Open:
 
+```text
 http://localhost:5173
-Supabase Setup
+```
 
-The current schema creates:
+---
 
-schools
-profiles
-classes
-students
-student_parents
-feed_posts
-post_media
-comments
-reactions
-attendance
-notifications
-audit_logs
+# Supabase Setup
 
-Most core tables include school_id, which allows the platform to support multiple schools inside one system.
+Current schema creates:
 
-Netlify Deployment
-Build Settings
-Build command: npm run build
-Publish directory: dist
-Netlify Environment Variables
+- schools
+- profiles
+- classes
+- students
+- student_parents
+- feed_posts
+- post_media
+- comments
+- reactions
+- attendance
+- notifications
+- audit_logs
 
-Add these in:
+Most tables include:
 
-Netlify → Site Settings → Environment Variables
+```text
+school_id
+```
+
+This supports multi-tenant architecture.
+
+---
+
+# Netlify Deployment
+
+## Build Settings
+
+```text
+Build command:
+npm run build
+
+Publish directory:
+dist
+```
+
+---
+
+## Environment Variables
+
+Inside Netlify:
+
+```text
+Site Settings → Environment Variables
+```
+
+Add:
+
+```env
 VITE_SUPABASE_URL
 VITE_SUPABASE_ANON_KEY
+```
 
-After adding environment variables, redeploy the site.
+Redeploy afterward.
 
-Security Notice
+---
 
-This project currently contains MVP-level security policies.
+# Security Notice
 
-Do not use real child data, parent data, school records, or private media until production security is implemented.
+⚠️ Current security policies are MVP-level only.
 
-Before real school pilots, the platform must include:
+Do NOT use real child data yet.
 
-Supabase Auth
-Authenticated sessions
-Role-based access control
-Strict RLS policies
-Parent-child access restrictions
-Teacher-class access restrictions
-Admin-school access restrictions
-Secure media storage policies
-Audit logging
-Privacy policy and consent workflow
-Production Features Still Needed
-Priority 1 — Authentication
-Login
-Logout
-Password reset
-Session persistence
-Role-based routing
-Admin-created teacher and parent accounts
-Priority 2 — Secure Access Control
-Parents only see linked children
-Teachers only see assigned classes
-Admins only see their own school
-No cross-school data access
-Priority 3 — Media Upload
-Supabase Storage bucket
-Image upload
-PDF upload
-Secure file access
-File preview cards
-Image optimization
-Priority 4 — Real Notifications
-In-app notification panel
-Mark as read
-New post notification creation
-Email alerts
-SMS/WhatsApp-ready notification layer
-Priority 5 — Admin Onboarding
-School setup wizard
-Add teachers
-Add classes
-Add students
-Link guardians
-Bulk import from CSV/Excel
-Priority 6 — Mobile Optimization
-Parent-first mobile layout
-Teacher camera-first posting flow
-Faster low-bandwidth loading
-Better responsive navigation
-Development Roadmap
-Phase 1 — Working MVP Foundation
+Before real deployment:
 
-Status: In progress
+- Supabase Auth
+- Secure sessions
+- Strict RLS
+- Parent-child restrictions
+- Teacher-class restrictions
+- Admin-school restrictions
+- Secure media policies
+- Audit logging
+- Privacy consent workflows
 
-Database schema
-Seed data
-Basic dashboards
-Feed posts
-Attendance
-Parent reactions/comments
-Student profile
-Phase 2 — Pilot-Ready MVP
+must all be implemented.
 
-Status: Next
+---
 
-Authentication
-Role-based dashboards
-Secure RLS
-Media upload
-Notification panel
-Admin onboarding flow
-Mobile-first UI improvements
-Phase 3 — School Pilot
+# Production Features Still Needed
 
-Status: Planned
+## Priority 1 — Authentication
 
-3–5 pilot schools
-Staff onboarding
-Parent feedback
-Teacher workflow testing
-Usage analytics
-Case studies
-Phase 4 — Paid Launch
+Needed:
 
-Status: Planned
+- Login
+- Logout
+- Password reset
+- Session persistence
+- Role-based routing
 
-Pricing plans
-Subscription management
-School billing
-WhatsApp/SMS packs
-AI report generation
-Support dashboard
-Phase 5 — Scale
+---
 
-Status: Planned
+## Priority 2 — Secure Access Control
 
-Payments
-Pickup authorization
-Transportation tracking
-AI learning insights
-Multi-branch schools
-US market adaptation
-AWS infrastructure migration where necessary
-Product Philosophy
+Needed:
 
-SchoolBridge should not become a bloated school ERP too early.
+- Parents only see linked children
+- Teachers only see assigned classes
+- Admins only see their school
+- No cross-school access
 
-The product succeeds if:
+---
 
-Parents open it regularly
-Teachers can post quickly
-Schools look more professional
-Communication chaos is reduced
-Child updates feel warm, private, and trustworthy
+## Priority 3 — Media Upload
 
-The emotional center of the product is the private child feed.
+Needed:
 
-Everything else should support that experience.
+- Supabase Storage
+- Image upload
+- PDF upload
+- Secure media access
+- File previews
 
-Business Positioning
+---
+
+## Priority 4 — Real Notifications
+
+Needed:
+
+- Notification panel
+- Mark as read
+- Email alerts
+- SMS/WhatsApp integration
+
+---
+
+## Priority 5 — Admin Onboarding
+
+Needed:
+
+- School setup wizard
+- Add teachers
+- Add classes
+- Add students
+- Bulk CSV import
+
+---
+
+## Priority 6 — Mobile Optimization
+
+Needed:
+
+- Parent-first mobile layout
+- Camera-first teacher upload flow
+- Faster low-bandwidth loading
+
+---
+
+# Development Roadmap
+
+## Phase 1 — Working MVP Foundation
+
+Status: **In Progress**
+
+- Database schema
+- Seed data
+- Dashboards
+- Feed posts
+- Attendance
+- Reactions/comments
+- Student profile
+
+---
+
+## Phase 2 — Pilot-Ready MVP
+
+Status: **Next**
+
+- Authentication
+- Role dashboards
+- Secure RLS
+- Media uploads
+- Notifications
+- Mobile optimization
+
+---
+
+## Phase 3 — School Pilot
+
+Status: **Planned**
+
+- 3–5 pilot schools
+- Staff onboarding
+- Parent feedback
+- Usage analytics
+
+---
+
+## Phase 4 — Paid Launch
+
+Status: **Planned**
+
+- Pricing plans
+- Subscription management
+- WhatsApp/SMS packs
+- AI report generation
+
+---
+
+## Phase 5 — Scale
+
+Status: **Planned**
+
+- Payments
+- Transportation tracking
+- AI learning insights
+- Multi-branch schools
+- US market adaptation
+- AWS migration
+
+---
+
+# Product Philosophy
+
+SchoolBridge should NOT become a bloated ERP too early.
+
+The platform succeeds if:
+
+- Parents open it daily
+- Teachers can post quickly
+- Schools look more professional
+- Communication becomes organized
+- Child updates feel warm and trustworthy
+
+The emotional center of the product is:
+
+# The Private Child Feed
+
+Everything else supports that experience.
+
+---
+
+# Business Positioning
 
 SchoolBridge is positioned as:
 
-A real-time parent engagement and school operations platform for modern schools.
+> A real-time parent engagement and school operations platform for modern schools.
 
-It is not just a school database.
+It is not just a database.
 
-It is designed to become the daily digital relationship layer between families and schools.
+It is a daily digital relationship layer between families and schools.
 
-Git Workflow
+---
 
-Use feature branches for major development work.
+# Git Workflow
 
+Use feature branches:
+
+```bash
 git checkout -b feature/auth
 git checkout -b feature/teacher-upload
 git checkout -b feature/notifications
 git checkout -b feature/mobile-ui
+```
 
 Commit often:
 
+```bash
 git add .
 git commit -m "Add teacher upload workflow"
 git push origin feature/teacher-upload
-License
+```
+
+---
+
+# License
 
 Private project.
 
 All rights reserved unless a license is added later.
 
-Founder Note
+---
+
+# Founder Note
 
 SchoolBridge was created from the insight that schools need more than administrative software.
 
 They need a trusted digital relationship layer.
 
-Parents want reassurance, visibility, and emotional connection to their child’s school life.
+Parents want:
+- reassurance
+- visibility
+- emotional connection
 
-Schools want professionalism, retention, and better communication.
+Schools want:
+- professionalism
+- retention
+- better communication
 
 SchoolBridge exists to connect both sides.
