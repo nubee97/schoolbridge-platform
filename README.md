@@ -1,110 +1,68 @@
-# SchoolBridge Working MVP
+# SchoolBridge Platform
 
-This is a functional Supabase-powered MVP for SchoolBridge.
+**SchoolBridge** is a multi-tenant parent engagement and school operations platform designed to help schools communicate with parents in real time through private child feeds, attendance records, reports, homework updates, announcements, and teacher-parent engagement tools.
 
-It is not a static demo. The main actions write to and read from Supabase.
+The product vision is to combine:
 
-## What works
+- **Korean-style parent engagement** — daily child updates, emotional trust, private activity feeds
+- **US SaaS scalability** — clean workflows, subscription readiness, multi-tenant structure
+- **Nigeria-first practicality** — mobile-first experience, affordable deployment, WhatsApp/SMS-ready communication
 
-### School/Admin
-- Create schools
-- Add admins, teachers, and parents
-- Create classes
-- Add students
-- Link parents to students
-- View school record counts and operational data
+SchoolBridge is designed to become a digital bridge between schools, teachers, parents, and students.
 
-### Teacher
-- Publish child-specific, class, or school-wide feed posts
-- Create updates, photo posts, reports, homework, announcements, behavior notes, and health notes
-- Attach image/PDF URLs to posts
-- Mark daily attendance
-- Use an AI-style draft helper for report/comment wording
+---
 
-### Parent
-- Select a parent profile
-- See only linked child/class/school posts
-- React with heart, clap, or smile
-- Comment on posts
-- View attendance records for linked children
+## Project Status
 
-### Student Profile
-- View student cards
-- See class, linked guardians, recent posts, and attendance history
+This repository contains the working MVP foundation for SchoolBridge.
 
-## Setup
+It is not a static design mockup. The current version is connected to Supabase and supports real database-backed actions for core school workflows.
 
-### 1. Install packages
+Current maturity level:
 
-```bash
-npm install
-```
+- Frontend MVP: active
+- Supabase schema: active
+- Seed data: available
+- Admin/Teacher/Parent workflows: partially functional
+- Authentication: pending production implementation
+- Secure RLS policies: pending production hardening
+- Media upload: pending full Supabase Storage integration
 
-### 2. Add environment variables
+---
 
-Create a `.env` file in the project root:
+## Core Product Concept
 
-```env
-VITE_SUPABASE_URL=https://rqanxemgnqgjbrdshtdw.supabase.co
-VITE_SUPABASE_ANON_KEY=your_supabase_publishable_anon_key
-```
+SchoolBridge follows a **B2B2C multi-tenant SaaS model**.
 
-Restart the dev server any time you edit `.env`.
+The platform serves:
 
-### 3. Create Supabase tables
+1. **Schools** as paying institutional customers
+2. **Teachers** as daily content and operations users
+3. **Parents** as engagement users
+4. **Students** as the central data and experience layer
 
-Open Supabase → SQL Editor → New Query.
+Each school operates as an isolated tenant inside the platform.
 
-Copy and run:
-
-```bash
-supabase/schema.sql
-```
-
-### 4. Add starter data
-
-Then copy and run:
-
-```bash
-supabase/seed.sql
-```
-
-### 5. Start local development
-
-```bash
-npm run dev
-```
-
-Open:
-
-```bash
-http://localhost:5173
-```
-
-## Netlify deployment
-
-Build command:
-
-```bash
-npm run build
-```
-
-Publish directory:
-
-```bash
-dist
-```
-
-Add these environment variables in Netlify:
-
-```env
-VITE_SUPABASE_URL
-VITE_SUPABASE_ANON_KEY
-```
-
-## Important security note
-
-This MVP includes open RLS policies so the app works quickly with the Supabase anon key during pilot development.
-
-Before using real child data, replace the MVP policies with proper authenticated role-based policies.
-
+```text
+SchoolBridge Core Platform
+        │
+        ├── School A
+        │     ├── Admins
+        │     ├── Teachers
+        │     ├── Classes
+        │     ├── Students
+        │     └── Parents
+        │
+        ├── School B
+        │     ├── Admins
+        │     ├── Teachers
+        │     ├── Classes
+        │     ├── Students
+        │     └── Parents
+        │
+        └── School C
+              ├── Admins
+              ├── Teachers
+              ├── Classes
+              ├── Students
+              └── Parents
